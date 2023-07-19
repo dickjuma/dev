@@ -93,7 +93,7 @@ app.post('/regester',CheckNotAuthenticated,async(req,res)=>{
             number:req.body.number,
             password:hashedpassword
         })
-
+res.redirect('/login')
 
 const help=[]
 app.post('/contact',(req,res)=>{
