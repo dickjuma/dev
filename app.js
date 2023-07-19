@@ -13,6 +13,7 @@ if(process.env.NODE_ENV !== 'production'){
 ////database connection
 //connection to my database
 ///trying to uppdate mt dtabase
+/*
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -29,7 +30,7 @@ const con = mysql.createConnection({
 
   //end connection
 
-
+*/
 
 app.use(express.static(path.join(__dirname,'views')))
 const bcrypt=require('bcrypt')
@@ -100,7 +101,7 @@ app.post('/contact',(req,res)=>{
         name:req.body.names,
 Email:req.body.emails,
 message:req.body.text
-    })
+    })/
     con.query("INSERT INTO message(name,email,message) VALUES ('"+req.body.names+"','"+req.body.emails+"','"+req.body.text+"')",function(err, result)
 {
   if (err)
