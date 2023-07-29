@@ -15,7 +15,6 @@ position:absolute;
   width:400px;
   background:white;
   border-radius:10px;
-  max-width:fit-content ;
 
   }
   .center h1{
@@ -115,6 +114,12 @@ position:absolute;
   .signup_link a:hover{
   text-decoration: underline;
   }
-  @media(max-width:fit-content) {
+  @media(max-width:350) {
+    .center{
+      margin-top: 5px;
+      margin-bottom: 10px;
+      
+    }
 
   }
+
