@@ -25,12 +25,12 @@ const con = mysql.createConnection({
   con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
-  })
+  })*/
 
 
   //end connection
 
-*/
+
 
 app.use(express.static(path.join(__dirname,'views')))
 const bcrypt=require('bcrypt')
@@ -83,6 +83,10 @@ app.get('/regester',CheckNotAuthenticated,(req,res)=>{
     res.render('regester.ejs')
 })
 //rotersdone
+
+
+//post to an object array
+
 app.post('/regester',CheckNotAuthenticated,async(req,res)=>{
     try{
         const hashedpassword=await bcrypt.hash(req.body.password,10)
@@ -93,78 +97,19 @@ app.post('/regester',CheckNotAuthenticated,async(req,res)=>{
             number:req.body.number,
             password:hashedpassword
         })
-res.redirect('/login')
-
-const help=[]
-app.post('/contact',(req,res)=>{
-    help.push({
-        name:req.body.names,
-Email:req.body.emails,
-message:req.body.text
-    })/
-    con.query("INSERT INTO message(name,email,message) VALUES ('"+req.body.names+"','"+req.body.emails+"','"+req.body.text+"')",function(err, result)
-{
-  if (err)
-     throw err;
-     console.log('message added')
-}
-);
-    console.log(help)
-    res.redirect('/')
-
-})
-         //res.redirect('/login')
-        /* con.query("SELECT Email FROM users WHERE Email=?",[email],(error,data)=>{
-if(error) throw error;
-if(result >0)
-console.log('email taken')
-else{*/
-//failed update
-
-          //update inputs to deatails database**juma
-con.query("INSERT INTO users(Username,Email,Phonenumber,password) VALUES ('"+req.body.name+"','"+req.body.email+"','"+req.body.number+"','"+hashedpassword+"')",function(err, result)
-{
-  if (err)
-     throw err;
-     console.log('database updated')
-}
-);
-/*const email=req.body.email
-con.query("SELECT COUNT(*) AS cnt FROM users WHERE Email = ? " ,
-[email] , function(err , data){
-   if(err){
-       console.log(err);
-   }
-   else{
-       if(data[0].cnt > 0){
-        res.status(500).send('email taken try to log in ')     // Already exist
-       }else{
-        con.query("INSERT INTO users(Username,Email,Phonenumber,password) VALUES ('"+req.body.name+"','"+req.body.email+"','"+req.body.number+"','"+hashedpassword+"')",function(err, result)
-        {
-          if (err)
-             throw err;
-             console.log('database updated')
-        })
-       }
-   }
-})*/
-res.redirect('/login')
+        res.redirect('/login')
     }
-
     catch{
-res.redirect('/regester')
+        res.redirect('regester')
     }
-    console.log(users)
+          console.log(users)
 })
 app.post('/login',passport.authenticate('local',{
     successRedirect:'/',
     failureRedirect:'/login',
     failureFlash:true
 }
-)
-
-
-)
+))
 app.delete('/logout',(req,res)=>{
     req.logout(function(err) {
         if (err) return next(err);
@@ -182,16 +127,8 @@ function CheckNotAuthenticated(req,res,next){
        return res.redirect('/')
     }
 next()
-}
-
-
+};
 app.listen(5050,()=>{
     console.log("listening to port 5050........")
 })
-
-
-
-
-
-
 

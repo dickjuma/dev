@@ -8,13 +8,14 @@ body{
 
   }
   .center{
-    position:absolute;
+position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
   width:400px;
   background:white;
   border-radius:10px;
+  max-width:fit-content ;
 
   }
   .center h1{
@@ -26,6 +27,7 @@ body{
   .center form{
   padding:0 40px;
   box-sizing: border-box;
+  max-width: fit-content;
   }
   form .text_field{
     position:relative;
@@ -40,6 +42,7 @@ body{
     border:none;
     background:non;
     outline:none;
+    max-width:fit-content;
   }
   .text_field label{
   position:absolute;
@@ -50,6 +53,7 @@ body{
   font-size:16px;
   pointer-events:none;
   transition: .6s ;
+  max-width: fit-content;
 
   }
   .text_field span::before{
@@ -91,6 +95,7 @@ body{
    font-weight: 700;
    cursor:pointer;
    outline:none;
+   max-width: fit-content;
   }
   input[type="submit"]:hover{
    border-color:#2691d9;
@@ -109,4 +114,7 @@ body{
   }
   .signup_link a:hover{
   text-decoration: underline;
+  }
+  @media(max-width:fit-content) {
+
   }
