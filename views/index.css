@@ -160,7 +160,7 @@ a.active,a:hover{
   }
 
 }
-@media (max-width:640){
+@media (max-width:640px){
     #braice{
         max-width: fit-content;
         margin:0 auto;
@@ -208,7 +208,7 @@ a.active,a:hover{
 
 
 }
-@media (max-width:740){
+@media (max-width:740px){
     #braice{
         max-width: fit-content;
         margin:0 auto;
@@ -223,7 +223,7 @@ a.active,a:hover{
     }
 
 }
-@media (max-width:600){
+@media (max-width:600px){
     #braice{
         max-width: fit-content;
         margin:0 auto;
@@ -237,7 +237,7 @@ a.active,a:hover{
         max-height: fit-content;
     }
 }
-@media (max-width:540){
+@media (max-width:540px){
     #braice{
         max-width: fit-content;
         margin:0 auto;

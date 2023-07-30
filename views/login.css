@@ -115,13 +115,31 @@ text-decoration: underline;
 .heading{
   text-align: center;
 }
-@media (max-width:300){
+@media (max-width:330px){
   .heading{
     text-align: center;
     font-size:1rem;
     margin-bottom: 50px;
+    color:blue;
   }
   .center{
-    margin-top:50px;
+padding-right:5px;
+
+  }
+
+  body{
+    background: black;
   }
 }
+@media (max-width:200px){
+  .center{
+    padding-left:none;
+    padding-right:10px;
+  }
+  .heading{
+    margin-bottom:10px;
+    color:blue;
+  }
+
+}
+
