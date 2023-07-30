@@ -109,6 +109,7 @@ app.post('/login',passport.authenticate('local',{
     failureRedirect:'/login',
     failureFlash:true
 }
+
 ))
 app.delete('/logout',(req,res)=>{
     req.logout(function(err) {
